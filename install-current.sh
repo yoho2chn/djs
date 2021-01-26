@@ -5,7 +5,9 @@
 
 
 # prepend Magisk's busybox to PATH
-if [ -d /sbin/.magisk/busybox ]; then
+if [ -d /data/adb/magisk/busybox ]; then
+  PATH=/data/adb/magisk/busybox:$PATH
+elif [ -d /sbin/.magisk/busybox ]; then
   PATH=/sbin/.magisk/busybox:$PATH
 elif [ -d /sbin/.core/busybox ]; then
   PATH=/sbin/.core/busybox:$PATH
